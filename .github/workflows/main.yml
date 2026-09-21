@@ -1,0 +1,35 @@
+name: V73 GeoMIP aerosol-reservoir validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'C12_geomip_reservoir_validation.py'
+      - 'D20_controller.csv'
+      - 'D13_ctrl_uncert.csv'
+      - 'D31_geomip_benchmark.csv'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip numpy pandas matplotlib
+      - name: Run GeoMIP-constrained reservoir validation
+        run: python C12_geomip_reservoir_validation.py
+      - name: Upload validation outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: v73-geomip-reservoir-validation
+          path: |
+            D32_geomip_reservoir_central_timeseries.csv
+            D33_geomip_reservoir_ensemble.csv
+            D34_geomip_reservoir_summary.csv
+            D35_geomip_response_envelope.csv
+            V73_VALIDATION_SUMMARY.json
+            V73_VALIDATION_RESULTS.md
+            F7_geomip_reservoir_validation.png
