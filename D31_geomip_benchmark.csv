@@ -1,0 +1,5 @@
+benchmark,central,low,high,units,source,doi,interpretation
+sulfur_lifetime,1.0,0.67,1.5,years,"Lee et al. 2026, G6-1.5K-SAI four-model range","10.5194/acp-26-7463-2026","Approx. 8 months in UKESM and 1-1.5 years in CESM/E3SM/MIROC; used to bound reservoir e-folding time"
+cooling_per_injection,0.11,0.10,0.12,"degC per (Tg SO2 yr-1)","Lee et al. 2026, four-model mean +/- 1-sigma","10.5194/acp-26-7463-2026","Used only as an external response-envelope diagnostic, not as a conversion of W m-2 to injection mass"
+precipitation_change_at_1p4C_cooling,-0.11,-0.15,-0.07,"mm day-1","Lee et al. 2026, G6-1.5K-SAI 2065-2084","10.5194/acp-26-7463-2026","Used only as a global hydrological-response scale diagnostic; not a regional prediction"
+nonlinearity_onset,15,10,20,"Tg SO2 yr-1","Earlier modeling studies summarized by Lee et al. 2026","10.5194/acp-26-7463-2026","Contextual threshold range where injection efficiency may begin to fall; strategy and model dependent"
